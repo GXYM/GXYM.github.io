@@ -400,24 +400,6 @@
     
     
     
-    作者：王大锤
-链接：https://www.zhihu.com/question/54327683/answer/190969770
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-        
-          
-             <span id="/2021/04/20/%E5%9F%BA%E4%BA%8Egithub%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA1/" class="leancloud_visitors" data-flag-title="基于github的个人博客搭建(上)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">post.visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
         
 
 <div>
@@ -704,9 +686,14 @@ setInterval("createtime()",250);
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -733,7 +720,7 @@ setInterval("createtime()",250);
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"ouegIHN1O1PecC7XAZjSOAlE-gzGzoHsz","app_key":"tCR8NRGXf3HXiigTMcKGPjFp","server_url":null,"security":true,"betterPerformance":false};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"ouegIHN1O1PecC7XAZjSOAlE-gzGzoHsz","app_key":"tCR8NRGXf3HXiigTMcKGPjFp","server_url":null,"security":false,"betterPerformance":false};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
