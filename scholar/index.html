@@ -700,7 +700,7 @@ Decoding Network&quot; has been accepted by CAAI International Conference on Art
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -924,7 +924,7 @@ setInterval("createtime()",250);
         });
       };
       if (CONFIG.page.isPost) {
-
+        %if (CONFIG.hostname !== location.hostname) return;
         addCount(Counter);
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
