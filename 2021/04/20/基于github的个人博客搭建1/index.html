@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -327,15 +327,18 @@
 </ul>
 <h3 id="Step-5：构建hexo项目"><a href="#Step-5：构建hexo项目" class="headerlink" title="Step 5：构建hexo项目"></a>Step 5：构建hexo项目</h3><ul>
 <li><p>输入 hexo init 自动构建hexo项目</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304112614522-342877400.png"/></div></li>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304112614522-342877400.png"/></div>
+</li>
 <li><p>构建成功提示</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304113529590-575879807.png"/></div></li>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304113529590-575879807.png"/></div>
+</li>
 <li><p>输入 npm install，安装所需组件</p>
 </li>
 <li><p>输入hexo g，生成</p>
 </li>
 <li><p>输入hexo s，开启本地预览服务 </p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304113752094-1764630821.png"/></div></li>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304113752094-1764630821.png"/></div>
+</li>
 <li><p>浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，可以看到目前的效果</p>
 </li>
 </ul>
@@ -345,34 +348,38 @@
 安装扩展工具：输入   npm install hexo-deployer-git --save</li>
 </ul>
 <h3 id="Step-7：检查SSH-Keys设置"><a href="#Step-7：检查SSH-Keys设置" class="headerlink" title="Step 7：检查SSH Keys设置"></a>Step 7：检查SSH Keys设置</h3><ul>
-<li><p>输入  cd ~/.ssh</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304115220416-1076136876.png"/></div></li>
+<li><p>输入  cd ~&#x2F;.ssh</p>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304115220416-1076136876.png"/></div>
+</li>
 <li><p>输入 ssh-keygen -t rsa -C “(邮箱地址)</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304120802182-523566544.png"/></div></li>
-</ul>
-<ul>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304120802182-523566544.png"/></div>
+
+</li>
 <li><p>输入 eval “$(ssh-agent -s)”，添加密钥到ssh-agent</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304133339703-2062447267.png"/></div></li>
-<li><p>输入ssh-add ~/.ssh/github_rsa，添加生成的SSH key到ssh-agent</p>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304133339703-2062447267.png"/></div>
+</li>
+<li><p>输入ssh-add ~&#x2F;.ssh&#x2F;github_rsa，添加生成的SSH key到ssh-agent</p>
 <div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304133556917-1120480583.png"/></div></li>
 </ul>
 <h3 id="Step-8：添加SSH-Key到Github"><a href="#Step-8：添加SSH-Key到Github" class="headerlink" title="Step 8：添加SSH Key到Github"></a>Step 8：添加SSH Key到Github</h3><ul>
-<li><p>输入 cat ~/.ssh/id_rsa.pub 复制SSH Key到粘贴板<br>(*) 上一步也可以打开文件夹找到目标文件夹，打开id_rsa.pub进行复制</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304132328964-13532677.png"/></div></li>
+<li><p>输入 cat ~&#x2F;.ssh&#x2F;id_rsa.pub 复制SSH Key到粘贴板<br>(*) 上一步也可以打开文件夹找到目标文件夹，打开id_rsa.pub进行复制</p>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304132328964-13532677.png"/></div>
+</li>
 <li><p>打开Github的Settings –&gt; SSH and GPG keys –&gt;  New SSH key </p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304121749199-1460788374.png"/></div></li>
-</ul>
-<ul>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304121749199-1460788374.png"/></div>
+
+</li>
 <li><p>粘贴到Key下面的文本框里</p>
 </li>
-<li><p>输入ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#109;</a>，测试SSH是否添加成功，需要输入yes</p>
-<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304122150859-1133452382.png"/></div></li>
+<li><p>输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#99;&#x6f;&#109;</a>，测试SSH是否添加成功，需要输入yes</p>
+<div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304122150859-1133452382.png"/></div>
+</li>
 <li><p>回到blog文件夹设置账户信息</p>
 <div><img  src="https://img2020.cnblogs.com/i-beta/997121/202003/997121-20200304134148953-1539100197.png"/></div></li>
 </ul>
 <h3 id="Step-9：部署到github"><a href="#Step-9：部署到github" class="headerlink" title="Step 9：部署到github"></a>Step 9：部署到github</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* hexo d -g</span><br></pre></td></tr></table></figure>
 
-<h3 id="Step-10"><a href="#Step-10" class="headerlink" title="Step 10:"></a>Step 10:</h3><p> 输入网址 https://(你的github用户名).github.io/   即可访问, 打不开可能因为网的问题，或者仓储设置成了私有模式。</p>
+<h3 id="Step-10"><a href="#Step-10" class="headerlink" title="Step 10:"></a>Step 10:</h3><p> 输入网址 https:&#x2F;&#x2F;(你的github用户名).github.io&#x2F;   即可访问, 打不开可能因为网的问题，或者仓储设置成了私有模式。</p>
 <p>常见hexo命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br></pre></td></tr></table></figure>
 
@@ -501,20 +508,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -585,7 +592,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
